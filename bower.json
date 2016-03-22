@@ -1,10 +1,10 @@
 {
-  "name": "to-do",
+  "name": "Jason & Tal",
   "description": "",
   "main": "",
   "license": "ISC",
   "moduleType": [],
-  "homepage": "",
+  "homepage": "https://github.com/timmi89/toDoTypsescript",
   "ignore": [
     "**/.*",
     "node_modules",
