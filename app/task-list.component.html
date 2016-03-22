@@ -1,0 +1,5 @@
+<task-display *ngFor="#currentTask of taskList"
+  (click)="taskClicked(currentTask)"
+  [class.selected]="currentTask === selectedTask"
+  [task]="currentTask">
+</task-display>
