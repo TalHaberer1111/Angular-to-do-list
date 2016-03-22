@@ -2,12 +2,13 @@ import { Component, EventEmitter } from 'angular2/core';
 import { TaskComponent } from './task.component';
 import { Task } from './task.model';
 import { EditTaskDetailsComponent } from './edit-task-details.component';
+import { NewTaskComponent } from './new-task.component';
 
 @Component({
   selector: 'task-list',
   inputs: ['taskList'],
   outputs: ['onTaskSelect'],
-  directives: [TaskComponent, EditTaskDetailsComponent],
+  directives: [TaskComponent, EditTaskDetailsComponent, NewTaskComponent],
   template: `
   <task-display *ngFor="#currentTask of taskList"
     (click)="taskClicked(currentTask)"
@@ -16,6 +17,7 @@ import { EditTaskDetailsComponent } from './edit-task-details.component';
   </task-display>
   <edit-task-details *ngIf="selectedTask" [task]="selectedTask">
   </edit-task-details>
+  <new-task></new-task>
   `
 
 })
