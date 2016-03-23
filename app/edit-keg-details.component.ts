@@ -7,7 +7,10 @@ import {Keg} from './keg.model';
   template: `
   <div class="keg-form">
   <h3>Edit Keg Properties: </h3>
+  <input [(ngModel)]="keg.name" class="col-sm-8 input-lg keg-form">
   <input [(ngModel)]="keg.description" class="col-sm-8 input-lg keg-form">
+  <input [(ngModel)]="keg.abv" class="col-sm-8 input-lg keg-form">
+  <input [(ngModel)]="keg.ibu" class="col-sm-8 input-lg keg-form">
   `
 })
 export class EditKegDetailsComponent {
