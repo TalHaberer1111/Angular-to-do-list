@@ -1,32 +1,35 @@
 import { Component, EventEmitter } from 'angular2/core';
-import { TaskListComponent} from './task-list.component';
-import { Task } from './task.model';
+import { KegListComponent} from './keg-list.component';
+import { Keg } from './keg.model';
 
 // parent component
 @Component({
   selector: 'my-app',
-  directives: [TaskListComponent],
+  directives: [KegListComponent],
   template: `
     <div class="container">
-      <h1>To-Do List</h1>
-      <task-list
-        [taskList]="tasks"
-        (onTaskSelect)="taskWasSelected($event)">
-      </task-list>
+    <div class ="header">
+      <h1>Rob and Tal's Taproom</h1>
+      </div>
+      <keg-list
+        [kegList]="kegs"
+        (onKegSelect)="kegWasSelected($event)">
+      </keg-list>
     </div>
   `
 })
 export class AppComponent {
-  public tasks: Task[];  // Task[] (or Array<Task>) identifies tasks as an array of Task objects
+  public kegs: Keg[];  // Keg[] (or Array<Keg>) identifies kegs as an array of Keg objects
   constructor(){
-    this.tasks = [
-      new Task("Create To-Do List app.", 0),
-      new Task("Learn Kung Fu", 1),
-      new Task("Rewatch all the Lord of the Rings movies.", 2),
-      new Task("Do the laundry.", 3)
+    this.kegs = [
+      new Keg(0, "Dark Vador", "Porter", 5, 40, 124),
+      new Keg(1, "IB Waun", "IPA", 9, 60, 124),
+      new Keg(2, "Han Solo", "Amber Ale", 8, 30, 124),
+      new Keg(3, "Princes Lager", "Lager", 10, 45, 124),
+      new Keg(4, "Death Stout", "Irish Stout", 8,30, 124),
     ];
   }
-  taskWasSelected(clickedTask: Task): void{
-    console.log('parent', clickedTask);
+  kegWasSelected(clickedKeg: Keg): void{
+    console.log('parent', clickedKeg);
   }
 }
