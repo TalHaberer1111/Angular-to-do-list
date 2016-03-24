@@ -7,7 +7,7 @@ export class Keg {
               public description: string,
               public abv: number,
               public ibu: number,
-              public volume: number = 124) {
-
+              public volume: number = 124,
+              public price: number) {
   }
 }

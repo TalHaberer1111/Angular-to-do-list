@@ -12,6 +12,7 @@ import { KegComponent } from './keg.component';
     <input placeholder="Description" class="col-sm-8 input-lg" #newDescription>
     <input placeholder="ABV" class="col-sm-8 input-lg" #newABV>
     <input placeholder="IBU" class="col-sm-8 input-lg" #newIBU>
+    <input placeholder="Price" class="col-sm-8 input-lg" #newPrice>
     <button (click)="addKeg(newName, newDescription, newABV, newIBU)">Add</button>
   </div>
   `
@@ -27,11 +28,13 @@ export class NewKegComponent {
   addKeg(userName: HTMLInputElement,
          userDescription: HTMLInputElement,
          userABV: HTMLInputElement,
-         userIBU: HTMLInputElement){
-    this.onSubmitNewKeg.emit(new Keg(0, userName.value, userDescription.value, parseInt(userABV.value), parseInt(userIBU.value), 124));
+         userIBU: HTMLInputElement,
+         userPrice: HTMLInputElement){
+    this.onSubmitNewKeg.emit(new Keg(0, userName.value, userDescription.value, parseInt(userABV.value), parseInt(userIBU.value), 124, parseInt(userPrice.value)));
     userName.value = "";
     userDescription.value = "";
     userABV.value = "";
     userIBU.value = "";
+    userPrice.value = "";
   }
 }

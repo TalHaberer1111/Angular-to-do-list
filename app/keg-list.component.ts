@@ -22,8 +22,7 @@ import {TappedPipe} from './tapped.pipe';
     [class.selected]="currentKeg === selectedKeg"
     [keg]="currentKeg">
   </keg-display>
-  <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
-  </edit-keg-details>
+  <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg"></edit-keg-details>
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
   `
 })
@@ -39,13 +38,9 @@ export class KegListComponent {
     this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
   }
-  // createKeg(name: string, description: string, abv: number, ibu: number, volume: number): void {
-  //   this.kegList.push(
-  //     new Keg(this.kegList.length, name, description, abv, ibu, volume)
-  //   );
   createKeg(newKeg: Keg): void {
     this.kegList.push(
-      new Keg(this.kegList.length, newKeg.name, newKeg.description, newKeg.abv, newKeg.ibu, newKeg.volume)
+      new Keg(this.kegList.length, newKeg.name, newKeg.description, newKeg.abv, newKeg.ibu, newKeg.volume, newKeg.price)
     );
   }
   onChange(filterOption) {

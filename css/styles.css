@@ -1,10 +1,19 @@
-h1 {
-  text-align: center;
-
+body {
+  background: url(../images/bee.jpeg) no-repeat;
+  background-size: cover;
+  font-family: 'Quicksand';
 }
 
 .header {
-  background-color: gray;
+  background-color: #2D434C;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-radius: 80%;
+}
+
+.header h1 {
+  text-align: center;
+  color: #B7C6CB;
 }
 
 input {
@@ -14,4 +23,10 @@ input {
 
 h3 {
   margin-top: 20px !important;
+}
+
+.kegInfo {
+  font-size: 20px;
+  color: #4B717F;
+  text-shadow: .5 .5 grey;
 }

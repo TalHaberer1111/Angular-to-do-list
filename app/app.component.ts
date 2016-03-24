@@ -22,14 +22,13 @@ export class AppComponent {
   public kegs: Keg[];  // Keg[] (or Array<Keg>) identifies kegs as an array of Keg objects
   constructor(){
     this.kegs = [
-      new Keg(0, "Dark Vador", "Porter", 5, 40, 124),
-      new Keg(1, "IB Waun", "IPA", 9, 60, 124),
-      new Keg(2, "Han Solo", "Amber Ale", 8, 30, 124),
-      new Keg(3, "Princes Lager", "Lager", 10, 45, 124),
-      new Keg(4, "Death Stout", "Irish Stout", 8,30, 124),
+      new Keg(0, "Dark Vador", "Porter", 5, 40, 124, 5),
+      new Keg(1, "IB Waun", "IPA", 9, 60, 124, 5),
+      new Keg(2, "Han Solo", "Amber Ale", 8, 30, 124, 7),
+      new Keg(3, "Princes Lager", "Lager", 10, 45, 124, 7),
+      new Keg(4, "Death Stout", "Irish Stout", 8,30, 124, 9),
     ];
   }
   kegWasSelected(clickedKeg: Keg): void{
-    console.log('parent', clickedKeg);
   }
 }
