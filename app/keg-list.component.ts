@@ -29,6 +29,7 @@ import {TappedPipe} from './tapped.pipe';
 export class KegListComponent {
   public kegList: Keg[];
   public onKegSelect: EventEmitter<Keg>;
+  public onPurchaseSelect: EventEmitter<Number>;
   public selectedKeg: Keg;
   public filterTapped: string = "notTapped";
   constructor() {

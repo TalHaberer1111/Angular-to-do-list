@@ -13,7 +13,8 @@ import { Keg } from './keg.model';
       </div>
       <keg-list
         [kegList]="kegs"
-        (onKegSelect)="kegWasSelected($event)">
+        (onKegSelect)="kegWasSelected($event)"
+        (onPurchaseSelect)="pintWasPurchased($event)">
       </keg-list>
     </div>
   `
@@ -30,5 +31,7 @@ export class AppComponent {
     ];
   }
   kegWasSelected(clickedKeg: Keg): void{
+  }
+  pintWasPurchased(clickedPurchase: Keg): void{
   }
 }

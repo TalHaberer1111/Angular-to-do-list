@@ -12,6 +12,7 @@ import { Keg } from './keg.model';
         <label>{{ keg.name }}</label>
         <label> Total Pints Remaining: {{ keg.volume }}</label>
         <label> Price: {{ keg.price}}</label>
+        <button class="btn btn-success" (click)="purchased(keg.volume)">Purchase</button>
       </div>
       `
   })
@@ -19,5 +20,8 @@ import { Keg } from './keg.model';
     public keg: Keg;
     toggleTapped(setState: boolean){
       this.keg.tapped = setState;
+    }
+    purchased(setState: number){
+      this.keg.volume = setState -1;      
     }
   }
